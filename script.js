@@ -57,6 +57,7 @@ const add = document.forms['add-todo'];
 add.addEventListener('submit', e => {
     e.preventDefault();
     const newToDo = add.querySelector('input[type="text"]').value;
+    add.querySelector('input[type="text"]').value = "";
     if (newToDo) addToDo(newToDo);
 });
 
