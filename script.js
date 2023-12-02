@@ -8,6 +8,14 @@ document.addEventListener('click', () => {
     })
 });
 
+document.addEventListener('keydown',e=>{
+    if(e.key === 'Enter'){
+        if(document.activeElement.parentElement.className=='editing'){
+            acceptEdit(document.activeElement.parentElement);
+        }
+    }
+})
+
 list.addEventListener('click', e => {
     let li = null;
 
