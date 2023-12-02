@@ -1,5 +1,24 @@
 const list = document.querySelector('#list ul');
 
+const listOut = () => {
+    let keys = Object.keys(localStorage);
+
+    let todoList = [];
+    keys.forEach(key => {
+        if (key.substring(0, 6) == 'hjtodo') {
+            todoList.push(key.slice(7));
+        }
+    })
+
+    todoList.sort();
+    while (list.firstChild) {
+        list.removeChild(list.lastChild);
+    }
+    todoList.forEach(todo => addToDo(todo));
+}
+
+listOut();
+
 document.addEventListener('click', () => {
     list.childNodes.forEach(child => {
         if (child.className == 'editing' && document.activeElement.parentElement !== child) {
@@ -8,9 +27,9 @@ document.addEventListener('click', () => {
     })
 });
 
-document.addEventListener('keydown',e=>{
-    if(e.key === 'Enter'){
-        if(document.activeElement.parentElement.className=='editing'){
+document.addEventListener('keydown', e => {
+    if (e.key === 'Enter') {
+        if (document.activeElement.parentElement.className == 'editing') {
             acceptEdit(document.activeElement.parentElement);
         }
     }
@@ -58,12 +77,17 @@ add.addEventListener('submit', e => {
     e.preventDefault();
     const newToDo = add.querySelector('input[type="text"]').value;
     add.querySelector('input[type="text"]').value = "";
-    if (newToDo) addToDo(newToDo);
+    if (newToDo) localStorage.setItem(`hjtodo.${capitalizeFirstLetter(newToDo.trim())}`, 1);
+    listOut();
 });
 
-const deleteToDo = li => list.removeChild(li);
+const deleteToDo = li => {
+    list.removeChild(li);
+    localStorage.removeItem(`hjtodo.${li.firstChild.textContent}`);
+    listOut();
+}
 
-const addToDo = newToDo => {
+function addToDo(newToDo) {
     const li = document.createElement('li');
     const span = document.createElement('span');
     const deleteBtn = document.createElement('button');
@@ -127,12 +151,18 @@ const editToDo = li => {
 }
 
 const exitEdit = li => {
-    addToDo(li.firstChild.textContent);
-    deleteToDo(li);
+    list.removeChild(li);
+    listOut();
 }
 
 const acceptEdit = li => {
     let newText = li.childNodes[1].value;
+    localStorage.setItem(`hjtodo.${capitalizeFirstLetter(newText.trim())}`, 1)
+    localStorage.removeItem(`hjtodo.${li.firstChild.textContent}`);
     li.firstChild.textContent = newText;
-    exitEdit(li);
+    listOut();
+}
+
+function capitalizeFirstLetter(string) {
+    return string.charAt(0).toUpperCase() + string.slice(1);
 }
