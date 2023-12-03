@@ -98,11 +98,13 @@ function addToDo(newToDo) {
     deleteImg.classList.add('delete-ico');
     deleteImg.setAttribute('src', "icons/trash.png");
     deleteBtn.classList.add('delete');
+    deleteBtn.classList.add('button');
     deleteBtn.appendChild(deleteImg);
 
     editImg.classList.add('edit-ico');
     editImg.setAttribute('src', "icons/pencil-line.png")
     editBtn.classList.add('edit');
+    editBtn.classList.add('button');
     editBtn.appendChild(editImg);
 
     span.textContent = `${newToDo}`;
@@ -135,11 +137,13 @@ const editToDo = li => {
     cancelImg.classList.add('cancel-ico');
     cancelImg.setAttribute('src', "icons/cancel.png");
     cancelBtn.classList.add('cancel');
+    cancelBtn.classList.add('button');
     cancelBtn.appendChild(cancelImg);
 
     doneImg.classList.add('done-ico');
     doneImg.setAttribute('src', "icons/check.png")
     doneBtn.classList.add('done');
+    doneBtn.classList.add('button');
     doneBtn.appendChild(doneImg);
 
     li.append(span);
@@ -157,8 +161,8 @@ const exitEdit = li => {
 
 const acceptEdit = li => {
     let newText = li.childNodes[1].value;
-    localStorage.setItem(`hjtodo.${capitalizeFirstLetter(newText.trim())}`, 1)
     localStorage.removeItem(`hjtodo.${li.firstChild.textContent}`);
+    localStorage.setItem(`hjtodo.${capitalizeFirstLetter(newText.trim())}`, 1)
     li.firstChild.textContent = newText;
     listOut();
 }

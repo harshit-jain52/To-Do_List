@@ -1,0 +1,57 @@
+@font-face {
+    font-family: Petrov;
+    src: url('Fonts/PetrovSans-Book.ttf');
+}
+
+@font-face {
+    font-family: PetrovBold;
+    src: url('Fonts/PetrovSans-Bold.ttf');
+}
+
+body {
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    background-size: 400% 400%;
+    animation: gradient 10s ease infinite;
+    height: 100vh;
+    text-align: center;
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+ul {
+    list-style-type: none;
+}
+
+li span {
+    font-size: 20px;
+    font-family: PetrovBold;
+    color: wheat;
+}
+
+.button {
+    background: wheat;
+    border: none;
+    border-radius: 100%;
+    padding: 10px;
+    margin: 5px;
+}
+
+#add-todo input {
+    width: 50%;
+    height: 40px;
+    font-size: 20px;
+    font-family: Petrov;
+    background: wheat;
+}
