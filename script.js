@@ -132,7 +132,6 @@ const editToDo = li => {
     span.style.display = 'none';
 
     input.textContent = oldText;
-    input.style.resize = 'none';
 
     cancelImg.classList.add('cancel-ico');
     cancelImg.setAttribute('src', "icons/cancel.png");
@@ -162,7 +161,7 @@ const exitEdit = li => {
 const acceptEdit = li => {
     let newText = li.childNodes[1].value;
     localStorage.removeItem(`hjtodo.${li.firstChild.textContent}`);
-    localStorage.setItem(`hjtodo.${capitalizeFirstLetter(newText.trim())}`, 1)
+    if (newText) localStorage.setItem(`hjtodo.${capitalizeFirstLetter(newText.trim())}`, 1)
     li.firstChild.textContent = newText;
     listOut();
 }

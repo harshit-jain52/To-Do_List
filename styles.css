@@ -32,26 +32,55 @@ body {
 
 ul {
     list-style-type: none;
+    width: 100%;
 }
 
 li span {
     font-size: 20px;
     font-family: PetrovBold;
-    color: wheat;
+    color: lavender;
+    display: inline-block;
+    width: 50%;
 }
 
 .button {
-    background: wheat;
+    background: lavender;
     border: none;
     border-radius: 100%;
     padding: 10px;
+    margin: 10px;
+}
+
+.button:hover {
+    border-style: solid;
+    border-color: #9819e6;
+    border-width: 5px;
     margin: 5px;
 }
 
 #add-todo input {
     width: 50%;
-    height: 40px;
+    height: 45px;
     font-size: 20px;
     font-family: Petrov;
-    background: wheat;
+    background: lavender;
+    border: none;
+    border-radius: 25px;
+    padding-left: 15px;
+}
+
+#add-todo input:focus {
+    outline: none;
+}
+
+.editing textarea {
+    resize: none;
+    outline: none;
+    display: inline-block;
+    width: 50%;
+    font-size: 20px;
+    font-family: Petrov;
+    background: lavender;
+    height: 30px;
+    padding: 5px;
 }
