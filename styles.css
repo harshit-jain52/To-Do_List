@@ -8,6 +8,11 @@
     src: url('Fonts/PetrovSans-Bold.ttf');
 }
 
+@font-face {
+    font-family: CoffeeBreak;
+    src: url('Fonts/My\ Coffee\ Break.ttf');
+}
+
 body {
     background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
     background-size: 400% 400%;
@@ -30,14 +35,20 @@ body {
     }
 }
 
+h1 {
+    font-family: CoffeeBreak;
+    font-size: 50px;
+    color: lavender;
+    text-shadow: 0 0 15px #9819e6;
+}
+
 ul {
     list-style-type: none;
     width: 100%;
 }
 
 li span {
-    font-size: 20px;
-    font-family: PetrovBold;
+    font: 25px PetrovBold;
     color: lavender;
     display: inline-block;
     width: 50%;
@@ -61,8 +72,7 @@ li span {
 #add-todo input {
     width: 50%;
     height: 45px;
-    font-size: 20px;
-    font-family: Petrov;
+    font: 20px Petrov;
     background: lavender;
     border: none;
     border-radius: 25px;
@@ -78,9 +88,14 @@ li span {
     outline: none;
     display: inline-block;
     width: 50%;
-    font-size: 20px;
-    font-family: Petrov;
+    font: 20px Petrov;
     background: lavender;
     height: 30px;
     padding: 5px;
+}
+
+.logo {
+    margin: 30px;
+    height: 55px;
+    filter: drop-shadow(0 0 7px#9819e6);
 }
