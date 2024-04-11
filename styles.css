@@ -1,101 +1,101 @@
 @font-face {
-    font-family: Petrov;
-    src: url('Fonts/PetrovSans-Book.ttf');
+  font-family: Petrov;
+  src: url("Fonts/PetrovSans-Book.ttf");
 }
 
 @font-face {
-    font-family: PetrovBold;
-    src: url('Fonts/PetrovSans-Bold.ttf');
+  font-family: PetrovBold;
+  src: url("Fonts/PetrovSans-Bold.ttf");
 }
 
 @font-face {
-    font-family: CoffeeBreak;
-    src: url('Fonts/My\ Coffee\ Break.ttf');
+  font-family: CoffeeBreak;
+  src: url("Fonts/My\ Coffee\ Break.ttf");
 }
 
 body {
-    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
-    background-size: 400% 400%;
-    animation: gradient 10s ease infinite;
-    height: 100vh;
-    text-align: center;
+  background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+  background-size: 400% 400%;
+  animation: gradient 10s ease infinite;
+  height: 100vh;
+  text-align: center;
 }
 
 @keyframes gradient {
-    0% {
-        background-position: 0% 50%;
-    }
+  0% {
+    background-position: 0% 50%;
+  }
 
-    50% {
-        background-position: 100% 50%;
-    }
+  50% {
+    background-position: 100% 50%;
+  }
 
-    100% {
-        background-position: 0% 50%;
-    }
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
 h1 {
-    font-family: CoffeeBreak;
-    font-size: 50px;
-    color: lavender;
-    text-shadow: 0 0 15px #9819e6;
+  font-family: CoffeeBreak;
+  font-size: 50px;
+  color: lavender;
+  text-shadow: 0 0 15px #9819e6;
 }
 
 ul {
-    list-style-type: none;
-    width: 100%;
+  list-style-type: none;
+  width: 100%;
 }
 
 li span {
-    font: 25px PetrovBold;
-    color: lavender;
-    display: inline-block;
-    width: 50%;
+  font: 25px PetrovBold;
+  color: lavender;
+  display: inline-block;
+  width: 50%;
 }
 
 .button {
-    background: lavender;
-    border: none;
-    border-radius: 100%;
-    padding: 10px;
-    margin: 10px;
+  background: lavender;
+  border: none;
+  border-radius: 100%;
+  padding: 10px;
+  margin: 10px;
 }
 
 .button:hover {
-    border-style: solid;
-    border-color: #9819e6;
-    border-width: 5px;
-    margin: 5px;
+  border-style: solid;
+  border-color: #9819e6;
+  border-width: 5px;
+  margin: 5px;
 }
 
 #add-todo input {
-    width: 50%;
-    height: 45px;
-    font: 20px Petrov;
-    background: lavender;
-    border: none;
-    border-radius: 25px;
-    padding-left: 15px;
+  width: 50%;
+  height: 45px;
+  font: 20px Petrov;
+  background: lavender;
+  border: none;
+  border-radius: 25px;
+  padding-left: 15px;
 }
 
 #add-todo input:focus {
-    outline: none;
+  outline: none;
 }
 
 .editing textarea {
-    resize: none;
-    outline: none;
-    display: inline-block;
-    width: 50%;
-    font: 20px Petrov;
-    background: lavender;
-    height: 30px;
-    padding: 5px;
+  resize: none;
+  outline: none;
+  display: inline-block;
+  width: 50%;
+  font: 20px Petrov;
+  background: lavender;
+  height: 30px;
+  padding: 5px;
 }
 
 .logo {
-    margin: 30px;
-    height: 55px;
-    filter: drop-shadow(0 0 7px#9819e6);
+  margin: 30px;
+  height: 55px;
+  filter: drop-shadow(0 0 7px#9819e6);
 }
